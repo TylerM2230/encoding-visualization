@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positional Encoding Visualizer - Aligned Text</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="controls">
+      <div>
+        <label for="inputText">Input Sentence:</label>
+        <textarea id="inputText">
+The quick brown fox jumps over the lazy dog</textarea
+        >
+      </div>
+      <div>
+        <label for="dModelInput">Embedding Dimension (d_model):</label>
+        <input
+          type="number"
+          id="dModelInput"
+          value="32"
+          min="4"
+          max="256"
+          step="2"
+        />
+        <p class="info-text">
+          Even, min 4. First 3 PE values set X,Y,Z origin & arrow direction.
+        </p>
+      </div>
+      <button id="visualizeButton">Visualize</button>
+    </div>
+
+    <div id="canvasContainer"></div>
+    <div id="messageBox"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FontLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TextGeometry.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
